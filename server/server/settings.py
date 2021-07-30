@@ -26,7 +26,12 @@ SECRET_KEY = 'django-insecure-v^(wr&hs9h(lx2za%02a-ta3s4(te$rb3zzxqu@-ypl_8ubm-l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=1))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'ffdraft-server-env.eba-tm9s2rtw.us-west-2.elasticbeanstalk.com',
+    '7inthebox.com',
+    'api.7inthebox.com'
+]
 
 
 # Application definition
@@ -95,6 +100,30 @@ DATABASES = {
     }
 }
 
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'djongo',
+            "CLIENT": {
+                "name": 'ffdraft-dev',
+                "host": 'mongodb+srv://root:1234@ffdraft.scjqb.mongodb.net/ffdraft-dev?retryWrites=true&w=majority',
+                "username": 'root',
+                "password": '1234',
+                "authMechanism": "SCRAM-SHA-1"
+            }
+        }
+    }
+
+# Authentication
+
+# AUTHENTICATION_BACKENDS = (
+#     'mongoengine.django.auth.MongoEngineBackend',
+# )
+#
+# SESSION_ENGINE = 'mongoengine.django.sessions'
+# SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -135,8 +164,22 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'http://ffdraft-client.s3-website-us-west-2.amazonaws.com',
+    'https://ffdraft-client.s3-website-us-west-2.amazonaws.com',
+    'http://d3u3j54quw8zdo.cloudfront.net',
+    'https://d3u3j54quw8zdo.cloudfront.net',
+    'http://7inthebox.com',
+    'https://7inthebox.com',
+    'http://api.7inthebox.com',
+    'https://api.7inthebox.com',
+    'http://draftstrategysim.com/',
+    'https://draftstrategysim.com/',
+    'http://www.draftstrategysim.com/',
+    'https://www.draftstrategysim.com/'
 ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

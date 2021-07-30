@@ -4,6 +4,9 @@ package-lock.json
 .idea/
 .DS_Store
 
+server/.csv
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -11,10 +11,7 @@ class Distribution(models.Model):
     teams = models.PositiveIntegerField(
         default=12
     )
-    rounds = models.PositiveIntegerField(
-        default=16
-    )
-    distributions = models.JSONField(
+    data = models.JSONField(
         null=False
     )
 
@@ -34,6 +31,9 @@ class Lineup(models.Model):
     rounds = models.PositiveIntegerField(
         default=16
     )
+    starters = models.JSONField(
+        null=True
+    )
     pick = models.PositiveIntegerField(
         default=1
     )
@@ -41,9 +41,6 @@ class Lineup(models.Model):
         default=0
     )
     players = models.JSONField(
-        null=True
-    )
-    positions = models.JSONField(
         null=True
     )
 

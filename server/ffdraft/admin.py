@@ -5,11 +5,11 @@ from .models import Position
 
 
 class DistributionAdmin(admin.ModelAdmin):
-    list_display = ('_id', 'scoring', 'teams', 'rounds', 'distributions')
+    list_display = ('_id', 'scoring', 'teams', 'data')
 
 
 class LineupAdmin(admin.ModelAdmin):
-    list_display = ('_id', 'scoring', 'teams', 'rounds', 'pick', 'score', 'players', 'positions')
+    list_display = ('_id', 'scoring', 'teams', 'rounds', 'starters', 'pick', 'score', 'players')
 
 
 class PositionAdmin(admin.ModelAdmin):

@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from django.conf import settings
 
 from .routers.distribution import DistributionRouter
 from .routers.lineup import LineupRouter
 from .routers.position import PositionRouter
+from .routers.user import UserRouter
 
 router = routers.DefaultRouter()
 
@@ -27,10 +29,15 @@ distribution_router = DistributionRouter()
 lineup_router = LineupRouter()
 position_router = PositionRouter()
 
+user_router = UserRouter()
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
     path('distributions/', include(distribution_router.urls)),
-    path('lineups/', include(lineup_router.urls)),
-    path('positions/', include(position_router.urls))
+    # path('lineups/', include(lineup_router.urls)),
+    # path('positions/', include(position_router.urls)),
+    # path('users/', include(user_router.urls))
 ]
+
+if settings.DEBUG:
+    urlpatterns.append(path('admin/', admin.site.urls))
+    # urlpatterns.append(path('api/', include(router.urls)))
