@@ -1,1 +1,1 @@
-# ffdraft
+# Draft Strategy Sim
