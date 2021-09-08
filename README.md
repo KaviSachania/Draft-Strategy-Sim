@@ -6,5 +6,5 @@ Built using Python Django, MongoDB, and ReactJS.
 
 Web application is live at [draftstrategysim.com](https://www.draftstrategysim.com)
 
-![home](draftstrategysim-home.jpg)
+![home](draftstrategysim-home.png)
 
