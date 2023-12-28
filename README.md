@@ -4,7 +4,7 @@ Draft Strategy Sim is a web application that allows the user to select their pos
 
 Built using Python Django, MongoDB, and ReactJS.
 
-Web application is live at [draftstrategysim.com](https://www.draftstrategysim.com)
+Web application is live at [draftstrategysim.com](https://www.draftstrategysim.com) (no longer live)
 
 ![home](draftstrategysim-home.png)
 
